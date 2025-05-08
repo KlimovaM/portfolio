@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    background: #0d1117;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #161b22;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #58a6ff;
+  }
+  
+  .section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in;
+  }
+  
+  .section.active {
+    display: flex;
+  }
+  
+  img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  .icons i {
+    font-size: 2.2rem;
+    margin: 0.5rem;
+    color: #58a6ff;
+    transition: transform 0.3s;
+  }
+  
+  .icons i:hover {
+    transform: scale(1.2);
+    color: #79c0ff;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 80%;
+    object-fit: cover;
+    border: 3px solid #58a6ff;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+    margin-top: 1rem;
+  }
+
+  .accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: left;
+  }
+  
+  .accordion-item {
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background: #161b22;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .accordion-header:hover {
+    background-color: #21262d;
+  }
+  
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    color: #c9d1d9;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .accordion-body.active {
+    max-height: 300px;
+    padding: 1rem;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #161b22;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .contact-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #58a6ff;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+  }
+  
+  .contact-info {
+    font-size: 1.1rem;
+    color: #c9d1d9;
+    max-width: 400px;
+  }
+  
