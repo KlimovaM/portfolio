@@ -17,7 +17,7 @@ const sections = {
       },
     contact: {
         title: "Contact me",
-        text: "Contact email: <strong>fina202415@st.forum.ac.jp</strong>",
+        text: "Contact email: <strong> fina202415@st.forum.ac.jp </strong>",
         img: "https://via.placeholder.com/300x200?text=Contact+Me",
         avatar: "https://avatar.iran.liara.run/public/94",
         icons: []
