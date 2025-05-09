@@ -117,7 +117,7 @@ body {
     padding: 1rem;
   }
 
-  .contact-card {
+  /* .contact-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,6 +128,11 @@ body {
     gap: 1.5rem;
     margin: 1.5rem 0;
     flex-wrap: wrap;
+  } */
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .contact-avatar {
@@ -139,9 +144,39 @@ body {
     box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
   }
   
-  .contact-info {
+  /* .contact-info {
     font-size: 1.1rem;
     color: #c9d1d9;
     max-width: 400px;
+  } */
+  .contact-info {
+    margin-bottom: 1rem;
+  }
+  
+  nav a#langToggle {
+    font-weight: bold;
+  }
+  
+  .contact-links {
+    margin-top: 1rem; /* Добавляем отступ сверху для ссылки */
+  }
+  
+  .contact-link {
+    display: flex;
+    align-items: center;
+    color: #0077b5; /* Цвет для LinkedIn */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    color: #004182; /* Тёмный цвет при наведении */
+  }
+  
+  .contact-link i {
+    margin-right: 8px;
+    font-size: 1.5rem;
   }
   
