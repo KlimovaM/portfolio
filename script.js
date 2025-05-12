@@ -149,9 +149,9 @@ function translate(key) {
       en: "Student"
     },
     studentDesc: {
-      ru: "Учусь в Forum Academy",
-      ja: "フォーラムアカデミーで学んでいます",
-      en: "Studying at Forum Academy"
+      ru: `Учусь в Forum Academy.  Чтобы узнать больше о моём опыте, пожалуйста <a href="#" onclick="navigateTo('contact')">свяжитесь со мной</a>.`,
+      ja: `フォーラムアカデミーで学んでいます。<a href="#" onclick="navigateTo('contact')">お問い合わせください</a>。`,
+      en: `Studying at Forum Academy. To learn more about my experience, please <a href="#" onclick="navigateTo('contact')">contact me</a>.`
     },
     tester: {
       ru: "Тестировщик",
@@ -159,19 +159,19 @@ function translate(key) {
       en: "Tester"
     },
     testerDesc: {
-      ru: "Ручное тестирование",
-      ja: "手動テストの経験",
-      en: "Manual testing experience"
-    },
+      ru: `Ручное тестирование. Чтобы узнать больше о моём опыте, пожалуйста <a href="#" onclick="navigateTo('contact')">свяжитесь со мной</a>.`,
+      ja: `手動テストの経験。詳しくは<a href="#" onclick="navigateTo('contact')">お問い合わせください</a>。`,
+      en: `Manual testing experience. To learn more about my experience, please <a href="#" onclick="navigateTo('contact')">contact me</a>.`
+        },
     support: {
       ru: "Техподдержка",
       ja: "テクニカルサポート",
       en: "Tech Support"
     },
     supportDesc: {
-      ru: "Опыт технической поддержки",
-      ja: "サポートの経験があります",
-      en: "Technical support experience"
+      ru: `Опыт технической поддержки. . Чтобы узнать больше о моём опыте, пожалуйста <a href="#" onclick="navigateTo('contact')">свяжитесь со мной</a>.`,
+      ja:`サポートの経験があります。<a href="#" onclick="navigateTo('contact')">お問い合わせください</a>。`,
+      en: `Technical support experience. To learn more about my experience, please <a href="#" onclick="navigateTo('contact')">contact me</a>.`
     }
   };
   return dictionary[key][currentLang];
@@ -180,3 +180,14 @@ function translate(key) {
 // Загрузка первой секции и инициализация языка
 updateLangButton();
 renderSection('home');
+
+// функция перехода на странице
+function navigateTo(section) {
+    document.querySelectorAll("nav a").forEach(a => {
+      a.classList.remove("active");
+      if (a.dataset.target === section) {
+        a.classList.add("active");
+      }
+    });
+    renderSection(section);
+  }
