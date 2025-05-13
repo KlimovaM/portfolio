@@ -1,5 +1,6 @@
 let currentLang = 'ru'; // возможные значения: 'ru', 'ja', 'en'
 
+//Данные для всех секций сайта
 const sections = {
   home: {
     title: {
@@ -48,6 +49,7 @@ const sections = {
   }
 };
 
+// Раздел для обработки хтмл и выбота секций
 const app = document.getElementById('app');
 
 function renderSection(key) {
@@ -101,7 +103,7 @@ function renderSection(key) {
         ` : ''}
       </div>
     `;
-  
+  // Раскрывающееся описание
     if (key === 'projects') {
       document.querySelectorAll('.accordion-header').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -121,26 +123,55 @@ document.querySelectorAll("nav a[data-target]").forEach(link => {
   });
 });
 
-// 🌍 Переключатель языка
+// Переключатель языка
 const langs = ['ru', 'ja', 'en'];
 document.getElementById("langToggle").addEventListener("click", e => {
   e.preventDefault();
   let index = langs.indexOf(currentLang);
   currentLang = langs[(index + 1) % langs.length];
-  updateLangButton();
+  updateLangButton(); //Меняем язык страницы
+  updateNavLabels(); //Меняем язык в шапке сайта
   const active = document.querySelector("nav a.active");
   renderSection(active ? active.dataset.target : 'home');
 });
 
+// Обновление языка в шапке сайта
+function updateNavLabels() {
+    const labels = {
+      home: {
+        ru: "Главная",
+        ja: "ホーム",
+        en: "Home"
+      },
+      projects: {
+        ru: "Опыт",
+        ja: "経験",
+        en: "Experience"
+      },
+      contact: {
+        ru: "Контакты",
+        ja: "連絡先",
+        en: "Contact"
+      }
+    };
+  
+    document.querySelectorAll("nav a[data-target]").forEach(link => {
+      const key = link.dataset.target;
+      link.textContent = labels[key][currentLang];
+    });
+  }
+  
+//Переключение языка для ссылки языков
 function updateLangButton() {
   const langText = {
-    ru: "🇷🇺 Русский",
-    ja: "🇯🇵 日本語",
-    en: "🇬🇧 English"
+    ru: "🇯🇵 日本語",
+    ja: "🇬🇧 English",
+    en: "🇷🇺 Русский"
   };
   document.getElementById("langToggle").innerText = langText[currentLang];
 }
 
+// Перевод для краткой информации обо мне
 function translate(key) {
   const dictionary = {
     student: {
@@ -179,6 +210,7 @@ function translate(key) {
 
 // Загрузка первой секции и инициализация языка
 updateLangButton();
+updateNavLabels(); // обновление языка в шапке сайта
 renderSection('home');
 
 // функция перехода на странице
